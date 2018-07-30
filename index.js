@@ -1,4 +1,4 @@
-function truncateTextNode (
+function truncateTextNode(
   textNode,
   rootElement,
   maximumHeight,
@@ -27,7 +27,7 @@ function truncateTextNode (
 }
 
 var TRAILING_WHITESPACE_AND_PUNCTUATION_REGEX = /[ .,;!?'‘’“”\-–—]+$/
-function truncateTextNodeByCharacter (
+function truncateTextNodeByCharacter(
   textNode,
   rootElement,
   maximumHeight,
@@ -49,7 +49,7 @@ function truncateTextNodeByCharacter (
   return false
 }
 
-function truncateElementNode (
+function truncateElementNode(
   element,
   rootElement,
   maximumHeight,
@@ -95,10 +95,10 @@ module.exports = function (rootElement, lineCount, options) {
 
   // Exit if text does not overflow `rootElement`.
   if (rootElement.scrollHeight <= maximumHeight) {
-    return
+    return false
   }
 
-  truncateElementNode(
+  return truncateElementNode(
     rootElement,
     rootElement,
     maximumHeight,
